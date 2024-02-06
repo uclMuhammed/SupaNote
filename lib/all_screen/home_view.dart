@@ -1,8 +1,5 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:supaflutter/core/decoration/box_decoration.dart';
-
+import 'package:supabase_flutter/supabase_flutter.dart' show Supabase;
 import 'tab_bar_view.dart';
 
 class HomeView extends StatefulWidget {
