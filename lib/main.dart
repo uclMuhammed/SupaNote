@@ -7,9 +7,10 @@ import 'service/supa_service.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Supabase.initialize(
-    url: SupaService().url,
-    anonKey: SupaService().anonKey,
-  );
+      url: SupaService().url,
+      anonKey: SupaService().anonKey,
+      postgrestOptions: const PostgrestClientOptions(),
+      realtimeClientOptions: const RealtimeClientOptions(eventsPerSecond: 10));
   runApp(const MyApp());
 }
 

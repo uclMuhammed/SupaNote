@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:supabase_flutter/supabase_flutter.dart' show Supabase;
-import 'tab_bar_view.dart';
+import 'note_screen_view.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -25,7 +24,6 @@ class _HomeViewState extends State<HomeView>
     controller.dispose();
   }
 
-  final _future = Supabase.instance.client.from("noteapp").select();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +31,7 @@ class _HomeViewState extends State<HomeView>
         bottom: TabBar(
           indicatorSize: TabBarIndicatorSize.tab,
           controller: controller,
-          tabs: [
+          tabs: const [
             Tab(
               text: 'Note',
             ),
@@ -61,11 +59,7 @@ class _HomeViewState extends State<HomeView>
       ),
       body: TabBarView(
         controller: controller,
-        children: [
-          noteScreeView(_future),
-          noteScreeView(_future),
-          noteScreeView(_future)
-        ],
+        children: const [NoteScreenView(), NoteScreenView(), NoteScreenView()],
       ),
     );
   }

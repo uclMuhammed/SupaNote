@@ -3,28 +3,31 @@ import 'package:flutter/cupertino.dart';
 class Note extends ChangeNotifier {
   bool? checkbox;
   bool? favorite;
+  int? id;
   String? noteid;
   String? title;
   String? time;
-  String? content;
+  String? contents;
   String? password;
 
   Note(
       {this.checkbox = false,
       this.time,
-      this.content,
+      this.contents,
       this.title,
+      this.id,
       this.password,
       this.noteid,
       this.favorite});
 
   Map<String, dynamic> toJson() => {
-        "id": noteid,
+        "noteid": noteid,
         "note_tile": title,
         "password": password,
         "creation_date": time,
-        "note_content": content,
+        "note_content": contents,
         "ischecking": checkbox,
         "favorite": favorite,
+        "id": id
       };
 }
