@@ -11,6 +11,6 @@ class SingUp extends StatefulWidget {
 class _SingUpState extends State<SingUp> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold();
   }
 }
