@@ -3,8 +3,6 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:supaflutter/all_screen/auth_screen.dart';
 import 'package:supaflutter/all_screen/splash_screen.dart';
 import 'package:supaflutter/core/utils/utils.dart';
-
-import 'all_screen/home_view.dart';
 import 'service/supa_service.dart';
 
 void main() {
