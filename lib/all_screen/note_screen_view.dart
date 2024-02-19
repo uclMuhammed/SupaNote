@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../core/constructor/note_constructo.dart';
-import '../core/decoration/box_decoration.dart';
+import '../core/decoration/decoration.dart';
 
 class NoteScreenView extends StatefulWidget {
   const NoteScreenView({super.key});
@@ -17,10 +17,6 @@ final future = Supabase.instance.client;
 class _NoteScreenViewState extends State<NoteScreenView>
     with SingleTickerProviderStateMixin {
   @override
-  void initState() {
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<Map<String, dynamic>>>(
@@ -59,16 +55,10 @@ class _NoteScreenViewState extends State<NoteScreenView>
                           await future.from('noteapp').update({
                             'checkbox': noteList.checkbox = true
                           }).eq('id', noteList.id.toString());
-                          setState(() {
-                            note['checkbox'] == true;
-                          });
                         } else {
                           await future.from('noteapp').update({
                             'checkbox': noteList.checkbox = false
                           }).eq('id', noteList.id.toString());
-                          setState(() {
-                            note['checkbox'] == false;
-                          });
                         }
                       },
                       child: Container(
@@ -118,11 +108,7 @@ class _NoteScreenViewState extends State<NoteScreenView>
                             ),
                             Checkbox(
                                 value: noteList.checkbox,
-                                onChanged: (value) async {
-                                  setState(() {
-                                    noteList.checkbox = value;
-                                  });
-                                }),
+                                onChanged: (value) async {}),
                           ],
                         ),
                       ),
